@@ -15,5 +15,17 @@
 <span>Aucun post dans la base de donnees</span>
 
 @endif
+<br>
+<h1>Liste de video</h1>
+
+@forelse($video->comments as $comment)
+
+<p>{{ $comment->content }} | created at {{ $comment->created_at->format('d m Y')}}</p>
+
+@empty
+
+<span>Aucun commentaire pour ce poste</span>
+@endforelse
+
 
 @endsection
